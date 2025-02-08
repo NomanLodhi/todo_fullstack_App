@@ -26,6 +26,8 @@ catch(error){
 }
 const updateTask=async (req,res)=>{
  try{
+const {id}=req.params;
+await TASK.update(req.body,{where:{id}})
    res.status(200).json({msg:"Update task"})
 }
 catch(error){
